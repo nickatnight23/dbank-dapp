@@ -14,6 +14,7 @@ contract dBank {
   mapping(address => bool) public isDeposited;
 
   //add events
+  event Deposit(address indexed user, uint etherAmount, uint timeStart);
 
   //pass as constructor argument deployed Token contract
   constructor(Token _token) public {
@@ -33,6 +34,7 @@ contract dBank {
     //set msg.sender deposit status to true
     isDeposited[msg.sender] = true; // activiate deposit status
     //emit Deposit event
+    emit Deposit(msg.sender, msg.value, block.timestamp);
   }
 
   function withdraw() public {
