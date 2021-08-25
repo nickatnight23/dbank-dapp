@@ -9,6 +9,9 @@ contract dBank {
   Token private token;
 
   //add mappings
+  mapping(address => uint) public etherBalanceOf;
+  mapping(address => uint) public depositStart;
+  mapping(address => bool) public isDeposited;
 
   //add events
 
@@ -22,10 +25,13 @@ contract dBank {
     //check if msg.sender didn't already deposited funds
     //check if msg.value is >= than 0.01 ETH
 
+      etherBalanceOf[msg.sender] = etherbalanceOf[msg.sender] + msg.value;
+      depositStart[msg.sender] = depositStart[msg.sender] + block.timestamp;
     //increase msg.sender ether deposit balance
     //start msg.sender hodling time
 
     //set msg.sender deposit status to true
+    isDeposited[msg.sender] = true; // activiate deposit status
     //emit Deposit event
   }
 
