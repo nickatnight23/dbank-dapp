@@ -49,6 +49,7 @@ contract dBank {
     //calc accrued interest
 
     //send eth to user
+    msg.sender.transfer(etherBalanceOf[msg.sender]);
     //send interest in tokens to user
 
     //reset depositer data
