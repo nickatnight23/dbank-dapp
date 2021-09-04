@@ -48,6 +48,8 @@ contract dBank {
 
     //calc interest per second
     //calc accrued interest
+    uint interestPerSecond = 31668017 * (etherBalanceOf[msg.sender] / 1e16);
+    uint interest = interestPerSecond * depositTime;
 
     //send eth to user
     msg.sender.transfer(etherBalanceOf[msg.sender]);
