@@ -53,6 +53,7 @@ contract dBank {
     //send interest in tokens to user
 
     //reset depositer data
+    etherBalanceOf[msg.sender] = 0;
 
     //emit event
   }
