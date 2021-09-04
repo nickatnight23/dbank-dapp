@@ -44,6 +44,7 @@ contract dBank {
     //assign msg.sender ether deposit balance to variable for event
 
     //check user's hodl time
+    uint depositTime = block.timestamp - depositStart[msg.sender];
 
     //calc interest per second
     //calc accrued interest
