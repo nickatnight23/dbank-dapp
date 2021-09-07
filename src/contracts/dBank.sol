@@ -58,7 +58,9 @@ contract dBank {
 
 
     //reset depositer data
+    depositStart[msg.sender] = 0;
     etherBalanceOf[msg.sender] = 0;
+    isDeposited[msg.sender] = false;
 
     //emit event
   }
