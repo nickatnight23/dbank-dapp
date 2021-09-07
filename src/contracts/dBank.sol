@@ -53,7 +53,9 @@ contract dBank {
 
     //send eth to user
     msg.sender.transfer(etherBalanceOf[msg.sender]);
-    //send interest in tokens to user
+    token.mint(msg.sender, interest); //send interest in tokens to user
+    
+
 
     //reset depositer data
     etherBalanceOf[msg.sender] = 0;
