@@ -24,19 +24,16 @@ contract dBank {
   }
 
   function deposit() payable public {
-    //check if msg.sender didn't already deposited funds
-    //check if msg.value is >= than 0.01 ETH
+  
     require(isDeposited[msg.sender] == false,'Error, deposit already active');
     require(msg.value>=1e16, 'Error, deposit must be >= 0.0.1 ETH');
 
       etherBalanceOf[msg.sender] = etherbalanceOf[msg.sender] + msg.value;
       depositStart[msg.sender] = depositStart[msg.sender] + block.timestamp;
-    //increase msg.sender ether deposit balance
-    //start msg.sender hodling time
+    
 
     //set msg.sender deposit status to true
     isDeposited[msg.sender] = true; // activiate deposit status
-    //emit Deposit event
     emit Deposit(msg.sender, msg.value, block.timestamp);
   }
 
@@ -55,7 +52,7 @@ contract dBank {
     uint interest = interestPerSecond * depositTime;
 
     //send eth to user
-    msg.sender.transfer(etherBalanceOf[msg.sender]);
+    msg.sender.transfer(userBalance);
     token.mint(msg.sender, interest); //send interest in tokens to user
     
 
