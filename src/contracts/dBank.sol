@@ -26,7 +26,7 @@ contract dBank {
   function deposit() payable public {
   
     require(isDeposited[msg.sender] == false,'Error, deposit already active');
-    require(msg.value>=1e16, 'Error, deposit must be >= 0.0.1 ETH');
+    require(msg.value>=1e16, 'Error, deposit must be more >= 0.0.1 ETH');
 
       etherBalanceOf[msg.sender] = etherbalanceOf[msg.sender] + msg.value;
       depositStart[msg.sender] = depositStart[msg.sender] + block.timestamp;
