@@ -39,7 +39,7 @@ contract dBank {
 
   function withdraw() public {
     //check if msg.sender deposit status is true
-    require(isDeposited[msg.sender] == true, 'Error, no previous deposit');
+    require(isDeposited[msg.sender] == true, 'Error, no previous deposit!');
     //assign msg.sender ether deposit balance to variable for event
     uint userBalance = etherBalanceOf[msg.sender];
 
