@@ -26,7 +26,7 @@ contract Token is ERC20 {
 
   function mint(address account, uint256 amount) public {
     //check if msg.sender have minter role
-    require(msg.sender == minter,'Error, msg.sender does not have minter role');
+    require(msg.sender == minter,'Error, msg.sender does not have minter status');
 		_mint(account, amount);
 	}
 }
