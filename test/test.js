@@ -27,7 +27,7 @@ contract('dBank', ([deployer, user]) => {
         expect(await token.symbol()).to.be.eq('DBC')
       })
 
-      it('checking token initial total supply', async () => {
+      it('checking initial total supply', async () => {
         expect(Number(await token.totalSupply())).to.eq(0)
       })
 
