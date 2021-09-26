@@ -17,7 +17,7 @@ contract('dBank', ([deployer, user]) => {
     await token.passMinterRole(dbank.address, {from: deployer})
   })
 
-  describe('testing token contract...', () => {
+  describe('testing  contract...', () => {
     describe('success', () => {
       it('checking token name', async () => {
         expect(await token.name()).to.be.eq('Decentralized Bank Currency')
