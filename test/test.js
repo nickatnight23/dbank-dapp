@@ -31,7 +31,7 @@ contract('dBank', ([deployer, user]) => {
         expect(Number(await token.totalSupply())).to.eq(0)
       })
 
-      it('dBank should have Token minter role', async () => {
+      it('Should have Token minter role', async () => {
         expect(await token.minter()).to.eq(dbank.address)
       })
     })
