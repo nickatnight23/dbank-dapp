@@ -23,7 +23,7 @@ contract('dBank', ([deployer, user]) => {
         expect(await token.name()).to.be.eq('Decentralized Bank Currency')
       })
 
-      it('checking token symbol', async () => {
+      it('checking symbol', async () => {
         expect(await token.symbol()).to.be.eq('DBC')
       })
 
